@@ -28,7 +28,7 @@ model = Model(GLPK.Optimizer)
 @variable(model, x[1:W], Bin)
 @variable(model, Z)
 
-@objective(model, Min, T)
+@objective(model, Min, Z)
 
 @constraint(model, [j=1:t], sum(x[i]*D[j,i] for i=1:W) == 1)
 
